@@ -19,9 +19,8 @@ public class Corso {
     @Column(name = "anno_accademico", nullable = false)
     private Integer annoAccademico;
 
-//    @ManyToOne(optional = false, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "id_docente", referencedColumnName = "id", nullable = false)
-//    private Docente docente;
+    @Column
+    private Long id_docente;
 //
 //    @ManyToMany
 //    @JoinTable(
@@ -34,13 +33,12 @@ public class Corso {
 
     public Corso() {}
 
-    public Corso(String nome, Integer annoAccademico) {
+    public Corso(String nome, Integer annoAccademico,Long id_docente) {
         this.nome = nome;
         this.annoAccademico = annoAccademico;
-//        this.docente = docente;
+        this.id_docente = id_docente;
     }
 
-    /* getter e setter */
     public Long getId() {
         return id;
     }
@@ -65,13 +63,13 @@ public class Corso {
         this.annoAccademico = annoAccademico;
     }
 
-//    public Docente getDocente() {
-//        return docente;
-//    }
-//
-//    public void setDocente(Docente docente) {
-//        this.docente = docente;
-//    }
+    public Long getId_docente() {
+        return id_docente;
+    }
+
+    public void setId_docente(Long id_docente) {
+        this.id_docente = id_docente;
+    }
 //
 //    public List<Discente> getDiscenti() {
 //        return discenti;

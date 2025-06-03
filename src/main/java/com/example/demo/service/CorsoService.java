@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,9 @@ public class CorsoService {
     @Autowired
     private CorsoRepository corsoRepository;
 
+    @Autowired
+    private RestTemplate restTemplate;
+    private final String docenteServiceUrl = "http://localhost:8081/docenti";
 //    @Autowired
 //    private DocenteRepository docenteRepository;
 //
@@ -43,10 +47,10 @@ public class CorsoService {
         dto.setNome(corso.getNome());
         dto.setAnnoAccademico(corso.getAnnoAccademico());
 
-//        if (corso.getDocente() != null) {
-//            dto.setDocenteId(corso.getDocente().getId());
+        if (corso.getId_docente() != null) {
+            dto.setId_docente(corso.getId_docente());
 //            dto.setDocenteNomeCompleto(corso.getDocente().getNome() + " " + corso.getDocente().getCognome());
-//        }
+        }
 //
 //        if (corso.getDiscenti() != null && !corso.getDiscenti().isEmpty()) {
 //            dto.setDiscentiIds(corso.getDiscenti().stream()

@@ -12,12 +12,11 @@ public class CorsoDTO {
     private Long id;
     private String nome;
     private Integer annoAccademico;
-    private Long docenteId;
-    private List<Long> discentiIds;
+    private Long id_docente;
 
     // Per la vista
-    private String docenteNomeCompleto;
-    private List<String> nomiDiscenti;
+//    private String docenteNomeCompleto;
+//    private List<String> nomiDiscenti;
 
     public CorsoDTO() {}
 
@@ -30,9 +29,8 @@ public class CorsoDTO {
     public Integer getAnnoAccademico() { return annoAccademico; }
     public void setAnnoAccademico(Integer annoAccademico) { this.annoAccademico = annoAccademico; }
 
-//    @JsonIgnore
-//    public Long getDocenteId() { return docenteId; }
-//    public void setDocenteId(Long docenteId) { this.docenteId = docenteId; }
+    public Long getId_docente() { return id_docente; }
+    public void setId_docente(Long id_docente) { this.id_docente = id_docente; }
 //
 //    @JsonIgnore
 //    public List<Long> getDiscentiIds() { return discentiIds; }
