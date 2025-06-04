@@ -45,13 +45,10 @@ public class CorsoService {
     public CorsoDTO saveCorso(CorsoFormDTO dto) {
         if (dto.getId_docente() != null) {
             try {
-                ResponseEntity<String> response = restTemplate.getForEntity(
-                        docenteServiceUrl, String.class, dto.getId_docente()
-                );
-
-                if (!response.getStatusCode().is2xxSuccessful()) {
-                    throw new RuntimeException("Docente con id " + dto.getId_docente() + " non trovato");
-                }
+                restTemplate.getForObject(docenteServiceUrl, String.class, dto.getId_docente());
+                // Se non viene lanciata eccezione, il docente esiste
+            } catch (org.springframework.web.client.HttpClientErrorException.NotFound e) {
+                throw new RuntimeException("Docente con id " + dto.getId_docente() + " non trovato");
             } catch (RestClientException e) {
                 throw new RuntimeException("Errore durante la verifica del docente: " + e.getMessage());
             }
@@ -61,6 +58,7 @@ public class CorsoService {
         Corso salvato = corsoRepository.save(corso);
         return modelMapper.map(salvato, CorsoDTO.class);
     }
+
 
     public CorsoDTO updateCorso(Long id, CorsoFormDTO dto) {
         Optional<Corso> optionalCorso = corsoRepository.findById(id);
