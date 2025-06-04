@@ -55,8 +55,8 @@ public class CorsoService {
         }
 
         Corso corso = modelMapper.map(dto, Corso.class);
-        Corso salvato = corsoRepository.save(corso);
-        return modelMapper.map(salvato, CorsoDTO.class);
+        Corso saved = corsoRepository.save(corso);
+        return modelMapper.map(saved, CorsoDTO.class);
     }
 
 
