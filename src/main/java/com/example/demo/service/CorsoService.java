@@ -43,7 +43,6 @@ public class CorsoService {
     }
 
     public CorsoDTO saveCorso(CorsoFormDTO dto) {
-        // ✅ Verifica se il docente esiste chiamando il microservizio Docente
         if (dto.getId_docente() != null) {
             try {
                 ResponseEntity<String> response = restTemplate.getForEntity(
