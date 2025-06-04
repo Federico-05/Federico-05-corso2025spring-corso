@@ -18,8 +18,6 @@ public class CorsoController {
     @Autowired
     private CorsoService corsoService;
 
-    @Autowired
-    private RestTemplate restTemplate;
 
 //    @Autowired
 //    private DocenteService docenteService;
