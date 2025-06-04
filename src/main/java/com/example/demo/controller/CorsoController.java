@@ -21,12 +21,6 @@ public class CorsoController {
     @Autowired
     private RestTemplate restTemplate;
 
-//    @Autowired
-//    private DocenteService docenteService;
-//
-//    @Autowired
-//    private DiscenteService discenteService;
-
 
     @GetMapping("/lista")
     public List<CorsoDTO> list(Model model) {

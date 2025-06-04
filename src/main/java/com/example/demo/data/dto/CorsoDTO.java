@@ -14,9 +14,6 @@ public class CorsoDTO {
     private Integer annoAccademico;
     private Long id_docente;
 
-    // Per la vista
-//    private String docenteNomeCompleto;
-//    private List<String> nomiDiscenti;
 
     public CorsoDTO() {}
 
@@ -31,36 +28,12 @@ public class CorsoDTO {
 
     public Long getId_docente() { return id_docente; }
     public void setId_docente(Long id_docente) { this.id_docente = id_docente; }
-//
-//    @JsonIgnore
-//    public List<Long> getDiscentiIds() { return discentiIds; }
-//    public void setDiscentiIds(List<Long> discentiIds) { this.discentiIds = discentiIds; }
-//
-//    public String getDocenteNomeCompleto() { return docenteNomeCompleto; }
-//    public void setDocenteNomeCompleto(String docenteNomeCompleto) { this.docenteNomeCompleto = docenteNomeCompleto; }
-//
-//    public List<String> getNomiDiscenti() { return nomiDiscenti; }
-//    public void setNomiDiscenti(List<String> nomiDiscenti) { this.nomiDiscenti = nomiDiscenti; }
+
     public CorsoDTO(Corso corso) {
         this.id = corso.getId();
         this.nome = corso.getNome();
         this.annoAccademico = corso.getAnnoAccademico();
-
-//        Docente docente = corso.getDocente();
-//        if (docente != null) {
-//            this.docenteId = docente.getId();
-//            this.docenteNomeCompleto = docente.getNome() + " " + docente.getCognome();
-//        }
-//
-//        if (corso.getDiscenti() != null && !corso.getDiscenti().isEmpty()) {
-//            this.discentiIds = corso.getDiscenti().stream()
-//                    .map(discente -> discente.getId())
-//                    .collect(Collectors.toList());
-//
-//            this.nomiDiscenti = corso.getDiscenti().stream()
-//                    .map(discente -> discente.getNome() + " " + discente.getCognome())
-//                    .collect(Collectors.toList());
-//        }
+        this.id_docente = corso.getId_docente();
     }
 
 }

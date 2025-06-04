@@ -21,14 +21,6 @@ public class Corso {
 
     @Column
     private Long id_docente;
-//
-//    @ManyToMany
-//    @JoinTable(
-//            name = "corso_discente",
-//            joinColumns = @JoinColumn(name = "id_corso"),
-//            inverseJoinColumns = @JoinColumn(name = "id_discente")
-//    )
-//    private List<Discente> discenti;
 
 
     public Corso() {}
