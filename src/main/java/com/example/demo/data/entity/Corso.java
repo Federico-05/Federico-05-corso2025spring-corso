@@ -31,9 +31,10 @@ public class Corso {
 //    private List<Discente> discenti;
 
 
-    public Corso() {}
+    public Corso() {
+    }
 
-    public Corso(String nome, Integer annoAccademico,Long id_docente) {
+    public Corso(String nome, Integer annoAccademico, Long id_docente) {
         this.nome = nome;
         this.annoAccademico = annoAccademico;
         this.id_docente = id_docente;
@@ -70,12 +71,4 @@ public class Corso {
     public void setId_docente(Long id_docente) {
         this.id_docente = id_docente;
     }
-//
-//    public List<Discente> getDiscenti() {
-//        return discenti;
-//    }
-//
-//    public void setDiscenti(List<Discente> discenti) {
-//        this.discenti = discenti;
-//    }
 }
