@@ -5,6 +5,7 @@ import com.example.demo.data.dto.CorsoFormDTO;
 import com.example.demo.data.dto.DocenteDTO;
 import com.example.demo.data.entity.Corso;
 import com.example.demo.repository.CorsoRepository;
+import com.example.demo.service.client.DocenteServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
