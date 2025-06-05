@@ -19,11 +19,7 @@ public class CorsoController {
     private CorsoService corsoService;
 
 
-//    @Autowired
-//    private DocenteService docenteService;
-//
-//    @Autowired
-//    private DiscenteService discenteService;
+
 
 
     @GetMapping("/lista")
