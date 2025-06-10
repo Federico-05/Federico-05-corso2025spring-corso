@@ -5,9 +5,7 @@ import com.example.demo.data.dto.CorsoFormDTO;
 import com.example.demo.service.CorsoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -19,22 +17,29 @@ public class CorsoController {
     private CorsoService corsoService;
 
 
-
-
-
     @GetMapping("/lista")
-    public List<CorsoDTO> list(Model model) {
-        return corsoService.getAllCorsiDTO();
+    public ResponseEntity<List<CorsoDTO>> getAllCorsi() {
+        List<CorsoDTO> corsi = corsoService.getAllCorsiDTO();
+        return ResponseEntity.ok(corsi);
     }
 
-    @GetMapping("/nuovo")
-    public CorsoFormDTO showAdd(Model model) {
-        return new CorsoFormDTO();
+    @GetMapping("/{id}")
+    public ResponseEntity<CorsoDTO> getCorso(@PathVariable Long id) {
+        CorsoDTO corso = corsoService.getCorsoById(id);
+        return corso != null ? ResponseEntity.ok(corso) : ResponseEntity.notFound().build();
     }
+
 
     @PostMapping("/nuovo")
-    public void create(@RequestBody CorsoFormDTO corsoDTO) {
-        corsoService.saveCorso(corsoDTO);
+    public ResponseEntity<CorsoDTO> create(@RequestBody CorsoFormDTO corsoDTO) {
+        try {
+            CorsoDTO corso = corsoService.saveCorso(corsoDTO);
+            return ResponseEntity.ok(corso);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
     @PutMapping("/{id}/edit")

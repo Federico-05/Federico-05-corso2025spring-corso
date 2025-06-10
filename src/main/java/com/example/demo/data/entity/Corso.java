@@ -21,14 +21,7 @@ public class Corso {
 
     @Column
     private Long id_docente;
-//
-//    @ManyToMany
-//    @JoinTable(
-//            name = "corso_discente",
-//            joinColumns = @JoinColumn(name = "id_corso"),
-//            inverseJoinColumns = @JoinColumn(name = "id_discente")
-//    )
-//    private List<Discente> discenti;
+
 
 
     public Corso() {}
@@ -70,12 +63,5 @@ public class Corso {
     public void setId_docente(Long id_docente) {
         this.id_docente = id_docente;
     }
-//
-//    public List<Discente> getDiscenti() {
-//        return discenti;
-//    }
-//
-//    public void setDiscenti(List<Discente> discenti) {
-//        this.discenti = discenti;
-//    }
+
 }

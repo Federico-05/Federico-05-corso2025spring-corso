@@ -1,14 +1,12 @@
 package com.example.demo.data.dto;
 
-public class CorsoFormDTO {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class CorsoFormDTO {
     private String nome;
     private Integer annoAccademico;
-    private Long id_docente;
-
-    public CorsoFormDTO() {}
-
-
+    private String nomeDocente;
+    private String cognomeDocente;
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -16,6 +14,10 @@ public class CorsoFormDTO {
     public Integer getAnnoAccademico() { return annoAccademico; }
     public void setAnnoAccademico(Integer annoAccademico) { this.annoAccademico = annoAccademico; }
 
-    public Long getId_docente() { return id_docente; }
-    public void setId_docente(Long id_docente) { this.id_docente = id_docente; }
+    public String getNomeDocente() { return nomeDocente; }
+    public void setNomeDocente(String nomeDocente) { this.nomeDocente = nomeDocente; }
+
+    public String getCognomeDocente() { return cognomeDocente; }
+    public void setCognomeDocente(String cognomeDocente) { this.cognomeDocente = cognomeDocente; }
 }
+
