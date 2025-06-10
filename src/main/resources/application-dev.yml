@@ -1,12 +1,12 @@
+
 spring:
   application:
-    name:demo
+    name: demo
 
   mvc:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
-
 
   datasource:
     url: jdbc:postgresql://localhost:5432/CorsoYML3
@@ -25,3 +25,7 @@ spring:
 
 server:
   port: 8082
+
+docenti:
+  service:
+    url: http://localhost:8081  # Sostituisci con l'URL corretto del tuo servizio docenti
