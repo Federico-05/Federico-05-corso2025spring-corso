@@ -2,14 +2,16 @@
 package com.example.demo.data.dto;
 
 import com.example.demo.data.entity.Corso;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import java.util.List;
 
 public class CorsoDTO {
     private Long id;
     private String nome;
     private Integer annoAccademico;
     private String nomeDocenteCompleto;
+
+    // Lista discenti associati al corso
+    private List<DiscenteDTO> discenti;
 
     public CorsoDTO() {}
 
@@ -30,4 +32,12 @@ public class CorsoDTO {
 
     public String getNomeDocenteCompleto() { return nomeDocenteCompleto; }
     public void setNomeDocenteCompleto(String nomeDocenteCompleto) { this.nomeDocenteCompleto = nomeDocenteCompleto; }
+
+    public List<DiscenteDTO> getDiscenti() {
+        return discenti;
+    }
+
+    public void setDiscenti(List<DiscenteDTO> discenti) {
+        this.discenti = discenti;
+    }
 }

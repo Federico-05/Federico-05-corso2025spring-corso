@@ -49,7 +49,6 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
         <dependency>
-
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
@@ -89,11 +88,10 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Tomcat provided -->
+        <!-- Tomcat -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <!-- Test -->
@@ -113,7 +111,7 @@
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <scope>provided</scope>
+            <version>6.0.0</version>
         </dependency>
 
         <!-- JSTL -->
@@ -132,7 +130,7 @@
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
-            <version>2.4.4</version>
+            <version>3.2.0</version>
         </dependency>
     </dependencies>
 

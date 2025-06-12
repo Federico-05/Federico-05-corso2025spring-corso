@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: demo
@@ -21,11 +20,13 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-      show-sql: true
+      show_sql: true
 
 server:
   port: 8082
 
 docenti:
   service:
-    url: http://localhost:8081  # Sostituisci con l'URL corretto del tuo servizio docenti
+    url: http://localhost:8081
+
+

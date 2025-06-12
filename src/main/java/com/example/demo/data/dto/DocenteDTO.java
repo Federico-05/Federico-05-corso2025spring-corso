@@ -21,4 +21,3 @@ public class DocenteDTO {
     public String getCognome() { return cognome; }
     public void setCognome(String cognome) { this.cognome = cognome; }
 }
-
