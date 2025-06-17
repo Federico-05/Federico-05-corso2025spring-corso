@@ -17,7 +17,15 @@ public class WebClientConfig {
     @Bean
     public WebClient discenteWebClient() {
         return WebClient.builder()
-                .baseUrl("http://localhost:8081/discenti") // correggi la porta se il servizio discente è altrove
+                .baseUrl("http://localhost:8081/discenti")
                 .build();
     }
+
+    @Bean
+    public WebClient userWebClient() {
+        return WebClient.builder()
+                .baseUrl("http://localhost:8080")
+                .build();
+    }
+
 }
