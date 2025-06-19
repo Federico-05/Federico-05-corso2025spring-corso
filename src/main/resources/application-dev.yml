@@ -28,5 +28,6 @@ server:
 docenti:
   service:
     url: http://localhost:8081
-
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationThatShouldBeAtLeast256BitsLong
 
